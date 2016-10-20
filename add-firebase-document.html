@@ -37,7 +37,11 @@
             .save(this.path)
             .then(function() {
               _this.$.firebaseDocument.reset();
-              _this.fire("reset");
+              _this.fire("then");
+            })
+            .catch(function() {
+              _this.$.firebaseDocument.reset();
+              _this.fire("catch");
             });
         }
       }
