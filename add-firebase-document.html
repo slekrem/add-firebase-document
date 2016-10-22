@@ -40,9 +40,9 @@
           this.$.firebaseDocument
             .save(this.path, this.key)
             .then(function() {
-              _this.$.firebaseDocument.reset();
               var splitPath = _this.$.firebaseDocument.path.split('/');
               _this.key = splitPath[splitPath.length - 1];
+              _this.$.firebaseDocument.reset();
               _this.fire("then");
             })
             .catch(function() {
