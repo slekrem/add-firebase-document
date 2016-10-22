@@ -28,15 +28,21 @@
         data: {
           type: Object,
           observer: "_dataChanged"
+        },
+        key: {
+          type: String,
+          notify: true
         }
       },
       _dataChanged: function() {
         if (this.path && this.data) {
           var _this = this;
           this.$.firebaseDocument
-            .save(this.path)
+            .save(this.path, this.key)
             .then(function() {
               _this.$.firebaseDocument.reset();
+              var splitPath = _this.$.firebaseDocument.path.split('/');
+              _this.key = splitPath[splitPath.length - 1];
               _this.fire("then");
             })
             .catch(function() {
