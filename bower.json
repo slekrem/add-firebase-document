@@ -3,7 +3,7 @@
   "main": "add-firebase-document.html",
   "dependencies": {
     "polymer": "Polymer/polymer#^1.4.0",
-    "polymerfire": "firebase/polymerfire#^0.10.0"
+    "polymerfire": "firebase/polymerfire#^0.9.7"
   },
   "devDependencies": {
     "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
